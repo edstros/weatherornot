@@ -11,7 +11,7 @@ angular.module('weatherornot.weather', [])
         setTimeout(function () {
           $scope.current = data.currently;
           $ionicLoading.hide();
-        }, 2000);
+        }, 500);
       });
   })
 

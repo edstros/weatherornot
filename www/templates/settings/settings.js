@@ -1,7 +1,7 @@
 angular.module('weatherornot.settings', [])
   .controller('SettingsCtrl', function (settings, $scope, $ionicLoading) {
-   $scope.scale = settings.getScale();
-    $scope.precision = settings.getPrecision();
+   $scope.scale = settings.scale;
+    $scope.precision = settings.precision;
 
 
 
@@ -12,26 +12,26 @@ angular.module('weatherornot.settings', [])
           duration: 1500
         });
       }
-      settings.setScale($scope.scale);
+      settings.scale = $scope.scale;
 
     });
     $scope.$watch('precision', function () {
-      settings.setPrecision($scope.precision);
+      settings.precision($scope.precision);
     });
   })
 
   .factory('settings', function () {
     return {
-      getScale: function () {
-        return localStorage.getItem('scale') || 'K';
+      get scale  () {
+        return localStorage.getItem('scale') || 'F';
       },
-      getPrecision: function () {
-        return localStorage.getItem('precision') || '2';
+      get precision() {
+        return localStorage.getItem('precision') || '1';
       },
-      setScale: function (s) {
+      set scale (s) {
         localStorage.setItem('scale', s);
       },
-      setPrecision: function (p) {
+      set precision (p) {
         localStorage.setItem('precision', p);
       }
     };
