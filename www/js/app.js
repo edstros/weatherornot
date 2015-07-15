@@ -35,7 +35,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'weatherornot.search'
     }
   })
   .state('app.weather', {
-    url: "/weather/:city/:lat/:lng",
+    //url: "/weather/:city/:lat/:lng",
+    url: "/weather/:lat/:lng",
     views: {
       'menuContent': {
         templateUrl: "templates/weather/weather.html",
