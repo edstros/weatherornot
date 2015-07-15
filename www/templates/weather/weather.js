@@ -3,7 +3,7 @@ angular.module('weatherornot.weather', [])
     $scope.city = $stateParams.city;
     //  $ionicLoading.show();
     $http.get('/api/forecast/' + $stateParams.lat + ',' + $stateParams.lng).success(function (data) {
-      $scope.current = data.currently;
+      $scope.current = data.currently;$scope.daily = data.daily;
       console.log(data);
     //  setTimeout($ionicLoading.hide, 1000);
     });

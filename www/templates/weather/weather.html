@@ -3,7 +3,16 @@
 
     <ion-item class="row">
       <ion-item class="col">
-        <h1>{{current.temperature}}</h1>
+        <h1>{{current.temperature}}&deg;</h1>
+      </ion-item>
+    </ion-item>
+    <ion-item class="row">
+      <ion-item class="col">
+        <p>Current forecast: {{current.summary}}</p>
+      </ion-item>
+    </ion-item>  <ion-item class="row">
+      <ion-item class="col">
+        <p>Looking ahead: {{daily.summary}}</p>
       </ion-item>
     </ion-item>
 
