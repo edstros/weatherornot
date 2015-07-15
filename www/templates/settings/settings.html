@@ -1,7 +1,6 @@
 <ion-view view-title="Settings">
   <ion-content>
     <ul class="list">
-
       <ion-item class="divider">
         Display precision
       </ion-item>
@@ -10,7 +9,6 @@
         <input type="range" ng-model="$parent.precision" min="0" max="2">
         <span>30.35&deg;</span>
       </div>
-
       <ion-item class="divider">
         Select scale
       </ion-item>
@@ -18,8 +16,6 @@
       <ion-radio  ng-model="$parent.scale" ng-value="'C'">Celsius</ion-radio>
       <ion-radio ng-model="$parent.scale" ng-value="'K'">Kelvin</ion-radio>
       <ion-radio ng-change="randomScale()" ng-model="$parent.scale" ng-value="'X'">Random</ion-radio>
-
-
     </ul>
   </ion-content>
 </ion-view>
