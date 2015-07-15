@@ -1,5 +1,5 @@
 angular.module('weatherornot.weather', [])
-  .controller('WeatherCtrl', function ($scope, $stateParams, weather, $ionicLoading) {
+  .controller('WeatherCtrl', function (settings, $scope, $stateParams, weather, $ionicLoading) {
     $scope.city = $stateParams.city;
     $ionicLoading.show({
       template: '<img src="http://i.imgur.com/EeE1Lsp.gif"><h1>Loading...</h1>'

@@ -2,9 +2,6 @@ angular.module('weatherornot.settings', [])
   .controller('SettingsCtrl', function (settings, $scope, $ionicLoading) {
    $scope.scale = settings.scale;
     $scope.precision = settings.precision;
-
-
-
     $scope.$watch('scale', function () {
       if ($scope.scale === 'X') {
         $ionicLoading.show({
@@ -13,13 +10,11 @@ angular.module('weatherornot.settings', [])
         });
       }
       settings.scale = $scope.scale;
-
     });
     $scope.$watch('precision', function () {
-      settings.precision($scope.precision);
+      settings.precision = $scope.precision;
     });
   })
-
   .factory('settings', function () {
     return {
       get scale  () {
