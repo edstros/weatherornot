@@ -1,10 +1,24 @@
 angular.module('weatherornot.weather', [])
-  .controller('WeatherCtrl', function ($scope, $stateParams, $http) {
+  .controller('WeatherCtrl', function ($scope, $stateParams, weather, $ionicLoading) {
     $scope.city = $stateParams.city;
-    //  $ionicLoading.show();
-    $http.get('/api/forecast/' + $stateParams.lat + ',' + $stateParams.lng).success(function (data) {
-      $scope.current = data.currently;$scope.daily = data.daily;
-      console.log(data);
-    //  setTimeout($ionicLoading.hide, 1000);
+    $ionicLoading.show({
+      template: '<img src="http://i.imgur.com/EeE1Lsp.gif"><h1>Loading...</h1>'
     });
-  });
+
+    weather
+      .getWeather($stateParams.lat, $stateParams.lng)
+      .success(function (data) {
+        setTimeout(function () {
+          $scope.current = data.currently;
+          $ionicLoading.hide();
+        }, 2000);
+      });
+  })
+
+.factory('weather', function ($http) {
+  return {
+    getWeather: function (lat, lng) {
+      return $http.get('/api/forecast/' + lat + ',' + lng)
+    }
+  };
+});

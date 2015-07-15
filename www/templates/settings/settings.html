@@ -1,32 +1,25 @@
 <ion-view view-title="Settings">
   <ion-content>
-   <!-- <ion-item class="row"><h1>Settings</h1></ion-item>-->
-    <ion-item class="row"><h1>Temperature display</h1></ion-item>
-  <div class="list">
+    <ul class="list">
 
-  <label class="item item-radio">
-    <input type="radio" name="measure">
-    <div class="item-content">
-      Fahrenheit
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
-   <label class="item item-radio">
-    <input type="radio" name="measure">
-    <div class="item-content">
-      Celsius
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
- <label class="item item-radio">
-    <input type="radio" name="measure">
-    <div class="item-content">
-      Kelvin
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
+      <ion-item class="divider">
+        Display precision
+      </ion-item>
+      <div class="item range range-positive">
+        <span>30&deg;</span>
+        <input type="range" ng-model="$parent.precision" min="0" max="2">
+        <span>30.35&deg;</span>
+      </div>
+
+      <ion-item class="divider">
+        Select scale
+      </ion-item>
+      <ion-radio ng-model="$parent.scale" ng-value="'F'">Fahrenheit</ion-radio>
+      <ion-radio  ng-model="$parent.scale" ng-value="'C'">Celsius</ion-radio>
+      <ion-radio ng-model="$parent.scale" ng-value="'K'">Kelvin</ion-radio>
+      <ion-radio ng-change="randomScale()" ng-model="$parent.scale" ng-value="'X'">Random</ion-radio>
 
 
-</div>
+    </ul>
   </ion-content>
 </ion-view>
