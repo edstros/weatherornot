@@ -3,7 +3,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'weatherornot.search'])
+angular.module('starter', ['ionic', 'starter.controllers', 'weatherornot.search', 'weatherornot.weather'])
 .run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -27,10 +27,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'weatherornot.search'
   })
   .state('app.search', {
     url: "/search",
-    controller: "SearchCtrl",
     views: {
       'menuContent': {
-        templateUrl: "templates/search/search.html"
+        templateUrl: "templates/search/search.html",
+        controller: "SearchCtrl"
+      }
+    }
+  })
+  .state('app.weather', {
+    url: "/weather/:city/:lat/:lng",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/weather/weather.html",
+        controller: "WeatherCtrl"
       }
     }
   })

@@ -1,0 +1,23 @@
+<ion-view view-title="{{city}}">
+  <ion-content>
+   <!-- <ion-item class="row">
+      <ion-item ng-model="current" class="col">
+        <h1>{{current}}</h1>
+      </ion-item>
+    </ion-item>-->
+
+     <ion-list class="list-inset">
+
+        <a ng-repeat="item in items"
+           href="#/{{weather}}"
+           class="item item-thumbnail-left">
+
+          <img ng-src="{{ item.image }}">
+          <h2>{{ item.album }}</h2>
+          <h4>{{ item.artist }}</h4>
+        </a>
+
+    </ion-list>
+
+  </ion-content>
+</ion-view>
