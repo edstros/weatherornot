@@ -3,7 +3,8 @@
 
     <ion-item class="row">
       <ion-item class="col">
-        <h1>{{current.temperature}}&deg;</h1>
+        <h1 ng-hide="current">--&deg;{{scale}}</h1>
+        <h1 ng-show="current">{{current.temperature | number:precision}}&deg;{{scale}}</h1>
       </ion-item>
     </ion-item>
     <ion-item class="row">

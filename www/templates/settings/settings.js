@@ -1,6 +1,6 @@
 angular.module('weatherornot.settings', [])
-  .controller('SettingsCtrl', function (settings, $scope, $ionicLoading) {
-   $scope.scale = settings.scale;
+  .controller('SettingsCtrl', function (settings, weather, $scope, $ionicLoading) {
+    $scope.scale = settings.scale;
     $scope.precision = settings.precision;
     $scope.$watch('scale', function () {
       if ($scope.scale === 'X') {
@@ -17,17 +17,44 @@ angular.module('weatherornot.settings', [])
   })
   .factory('settings', function () {
     return {
-      get scale  () {
+      get scale() {
         return localStorage.getItem('scale') || 'F';
       },
       get precision() {
         return localStorage.getItem('precision') || '1';
       },
-      set scale (s) {
+      set scale(s) {
         localStorage.setItem('scale', s);
       },
-      set precision (p) {
+      set precision(p) {
         localStorage.setItem('precision', p);
       }
     };
-  });
+
+  })
+
+.factory('locations', function () {
+  return {
+
+    data: [{
+      city: 'Cupertino, CA',
+      lat: '37.3175',
+      lng: '122.0419'
+  }, {
+
+      city: 'Mountain View, CA',
+      lat: '',
+      lng: ''
+  }, {
+
+      city: 'Redmond, WA',
+      lat: '',
+      lng: ''  }, {
+
+      city: 'Nashville, TN',
+      lat: '',
+      lng: ''
+  }]
+  }
+
+});
