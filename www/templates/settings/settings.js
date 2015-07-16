@@ -43,17 +43,18 @@ angular.module('weatherornot.settings', [])
   }, {
 
       city: 'Mountain View, CA',
-      lat: '',
-      lng: ''
+      lat: '37.3894',
+      lng: '122.0819'
   }, {
 
       city: 'Redmond, WA',
-      lat: '',
-      lng: ''  }, {
+      lat: '47.6694',
+      lng: '122.1239'
+  }, {
 
       city: 'Nashville, TN',
-      lat: '',
-      lng: ''
+      lat: '36.1667',
+      lng: '86.7833'
   }]
   }
 

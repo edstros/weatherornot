@@ -9,6 +9,7 @@ angular.module('weatherornot.search', [])
         })
         .success(function (data) {
           $scope.results = data.results;
+
         });
     }, 2000);
 

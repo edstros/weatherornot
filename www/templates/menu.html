@@ -27,8 +27,8 @@
       </ion-list>
       <!--divider-->
       <ion-item class="item-divider">My locations</ion-item>
-<ion-item class="row" ng-repeat="savedLocations">{{locations.saved}}</ion-item>
-   <!--item for each location-->
+      <!--item for each location-->
+      <a class="item" href="#" ng-repeat="fav in favorites">{{fav.city}}</a>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
