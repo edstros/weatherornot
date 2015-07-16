@@ -35,32 +35,38 @@ angular.module('weatherornot.settings', [])
     return {
       get favorites() {
         var json = localStorage.getItem('favorites');
-        return JSON.parse(json);
-      },
-      set favorites(f) {
-        var data = JSON.stringify(f);
-        localStorage.setItem('favorties', f);
-      },/*,
-      addFavorite = function () {
-      },
-      removeFavorite: function () {
-      }*/
-          favorites: [{
-            city: 'Cupertino, CA',
-            lat: '37.3175',
-            lng: '122.0419'
+            return JSON.parse(json);
+          },
+          set favorites(f) {
+            var data = JSON.stringify(f);
+            localStorage.setItem('favorites', json);
+          },
+          addFavorite: function (f) {
+          this.favorites = this.favorites.concat(f);
+            /*var favorites = this.favorites;
+            favorites.push(f);
+            this.favorites = favorites;*/
+
+          },
+         // removeFavorite: function () {},
+
+
+/*      favorites: [{
+        city: 'Cupertino, CA',
+        lat: '37.3175',
+        lng: '122.0419'
           }, {
-            city: 'Mountain View, CA',
-            lat: '37.3894',
-            lng: '122.0819'
+        city: 'Mountain View, CA',
+        lat: '37.3894',
+        lng: '122.0819'
           }, {
-            city: 'Redmond, WA',
-            lat: '47.6694',
-            lng: '122.1239'
+        city: 'Redmond, WA',
+        lat: '47.6694',
+        lng: '122.1239'
           }, {
-            city: 'Nashville, TN',
-            lat: '36.1667',
-            lng: '86.7833'
-          }]
+        city: 'Nashville, TN',
+        lat: '36.1667',
+        lng: '86.7833'
+          }]*/
     }
   });

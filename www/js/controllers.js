@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function(locations, $scope, $ionicModal, $timeout) {
-$scope.favorites = locations.data;
+$scope.favorites = locations.favorites;
 /*
 allows access favorite locations in settings.js, so they can be displayed in menu.html. A better way might be to create a new controller, like maybe menu.js, which creates a new module, then pass locations parameter into the function of the new controller, then define the scope.
 */
